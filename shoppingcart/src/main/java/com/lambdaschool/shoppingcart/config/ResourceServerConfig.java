@@ -63,7 +63,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
                 "/oauth/revoke-token",
                 "/logout")
             .authenticated()
-            .antMatchers("/roles/**")
+            .antMatchers("/roles/**", "/products/**")
             .hasAnyRole("ADMIN")
             .anyRequest().denyAll() // deny any endpoint that is not explicitly given access rights
             .and()
